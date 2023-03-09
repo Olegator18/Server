@@ -2,8 +2,8 @@ package com.example.Server.service;
 
 import com.example.Server.entity.BookEntity;
 import com.example.Server.repo.BookRepo;
-import com.example.Server.utils.BookValidationUtils;
-import com.example.Server.exception.ValidationExceptionBook;
+import com.example.Server.utils.ValidationUtils;
+import com.example.Server.exception.ValidationException;
 import org.springframework.stereotype.Service;
 
 
@@ -16,8 +16,8 @@ public class BookService {
         this.repo= repo;
 
     }
-    public BookEntity save(BookEntity book) throws ValidationExceptionBook {
-        BookValidationUtils.validationBook(book);
+    public BookEntity save(BookEntity book) throws ValidationException {
+        ValidationUtils.validationBook(book);
          return repo.save(book);
     }
     public void delete(Long id){repo.deleteById(id);}

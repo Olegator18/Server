@@ -1,7 +1,7 @@
 package com.example.Server.exception;
 
-public class ValidationExceptionBook extends Exception {
-    public ValidationExceptionBook(String message) {
+public class ValidationException extends Exception {
+    public ValidationException(String message) {
         super(message);
     }
 }
